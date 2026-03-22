@@ -1,0 +1,45 @@
+body
+{
+    font-family: Arial;
+}
+
+
+.header
+{
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+}
+
+
+.nav
+{
+    background-color: lightgray;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.nav a
+{
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.left
+{
+    width: 25%;
+    background-color: #f2f2f2;
+    vertical-align: top;
+}
+
+
+.right
+{
+    width: 75%;
+    padding: 10px;
+}

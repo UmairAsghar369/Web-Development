@@ -1,0 +1,192 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Background image - replace 'bg.jpg' with your own image file */
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== Login Container ===== */
+.login-box {
+    background-color: rgba(255, 255, 255, 0.92);
+    width: 380px;
+    padding: 30px 30px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* ===== Heading ===== */
+.login-box h2 {
+    color: #d9534f;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.login-box p.subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* ===== Input Fields ===== */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 10px 40px 10px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #999;
+}
+
+.input-group .icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 16px;
+}
+
+/* ===== Remember Me & Sign In Row ===== */
+.options-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.remember-me input {
+    margin-right: 6px;
+}
+
+.btn-signin {
+    background-color: #00a65a;
+    color: #fff;
+    border: none;
+    padding: 8px 22px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-signin:hover {
+    background-color: #008d4c;
+}
+
+/* ===== Forgot Password ===== */
+.forgot-link {
+    display: block;
+    text-align: left;
+    color: #d9534f;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== Portal Buttons Row ===== */
+.portal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-synopsis {
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-synopsis:hover {
+    background-color: #138496;
+}
+
+.btn-helpdesk {
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-helpdesk:hover {
+    background-color: #a93226;
+}
+
+/* ===== Register Section ===== */
+.register-section {
+    margin-top: 5px;
+}
+
+.register-section p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.btn-register {
+    display: block;
+    width: 100%;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-register:hover {
+    background-color: #218838;
+}
+
+/* ===== Footer ===== */
+.footer {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #777;
+}

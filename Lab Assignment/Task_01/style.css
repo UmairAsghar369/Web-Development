@@ -1,0 +1,136 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Header ===== */
+.header {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.header h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* ===== Navigation Bar ===== */
+.navbar {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #004d99;
+}
+
+.navbar td {
+    padding: 12px 20px;
+    text-align: center;
+}
+
+.navbar td a {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar td a:hover {
+    color: #ffcc00;
+}
+
+/* ===== Main Layout Table ===== */
+.main-layout {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* --- Left Sidebar --- */
+.sidebar {
+    width: 220px;
+    background-color: #e6ecf0;
+    vertical-align: top;
+    padding: 20px 15px;
+    border-right: 2px solid #ccc;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px 12px;
+    background-color: #003366;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #005599;
+}
+
+/* --- Right Content Area --- */
+.content {
+    vertical-align: top;
+    padding: 25px 30px;
+    background-color: #ffffff;
+}
+
+.content h2 {
+    color: #003366;
+    margin-bottom: 12px;
+    font-size: 22px;
+    border-bottom: 2px solid #004d99;
+    padding-bottom: 6px;
+}
+
+.content p {
+    margin-bottom: 15px;
+    font-size: 15px;
+    text-align: justify;
+}
+
+/* ===== Go To Top Link ===== */
+.go-top {
+    display: block;
+    text-align: right;
+    padding: 12px 30px;
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #004d99;
+}
+
+.go-top:hover {
+    color: #ffcc00;
+}
+
+/* ===== Footer (optional visual bottom) ===== */
+.footer {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 12px;
+    font-size: 13px;
+}
