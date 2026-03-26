@@ -1,0 +1,170 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+
+/* ===== Header Flexbox ===== */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:black;
+    color:white;
+}
+
+.nav{
+    display:flex;
+    gap:20px;
+}
+
+.nav a{
+    color:white;
+    text-decoration:none;
+}
+
+
+/* ===== Hero Flexbox ===== */
+
+.hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    padding:40px;
+}
+
+.hero img{
+    width:200px;
+    border-radius:50%;
+}
+
+
+/* ===== About Grid ===== */
+
+.about{
+    padding:40px;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.info-box{
+    background:lightgray;
+    padding:20px;
+}
+
+
+/* ===== Skills Grid ===== */
+
+.skills{
+    padding:40px;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.skill{
+    background:#eee;
+    padding:20px;
+}
+
+.bar{
+    background:#ccc;
+    height:10px;
+}
+
+.bar span{
+    display:block;
+    height:10px;
+    background:blue;
+}
+
+
+/* ===== Projects ===== */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:10px;
+    border:1px solid gray;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+
+/* ===== Contact Flexbox ===== */
+
+.contact{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:40px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:300px;
+}
+
+
+/* ===== Footer ===== */
+
+.footer{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    background:black;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+
+/* ===== Responsive ===== */
+
+@media(max-width:900px){
+
+.hero{
+    flex-direction:column;
+}
+
+.about-grid{
+    grid-template-columns:1fr;
+}
+
+.footer{
+    grid-template-columns:1fr;
+}
+
+}
+
+
+@media(max-width:600px){
+
+.nav{
+    flex-direction:column;
+}
+
+}
