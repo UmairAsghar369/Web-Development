@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 04 – Skills Section (CSS Grid)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <section class="skills" id="skills">
+
+    <div class="section-header">
+      <span class="section-tag">My Expertise</span>
+      <h2 class="section-title">Skills &amp; Technologies</h2>
+      <p class="section-sub">Tools and languages I work with professionally</p>
+    </div>
+
+    <!-- ★ Responsive auto-fit Grid ★ -->
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <h3 class="skill-name">HTML5</h3>
+        <div class="skill-level-wrap">
+          <div class="skill-level-bar" style="--pct: 95%"></div>
+          <span class="skill-pct">95%</span>
+        </div>
+        <span class="skill-badge">Expert</span>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🎨</div>
+        <h3 class="skill-name">CSS3 / Flexbox / Grid</h3>
+        <div class="skill-level-wrap">
+          <div class="skill-level-bar" style="--pct: 90%"></div>
+          <span class="skill-pct">90%</span>
+        </div>
+        <span class="skill-badge">Expert</span>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">⚡</div>
+        <h3 class="skill-name">JavaScript</h3>
+        <div class="skill-level-wrap">
+          <div class="skill-level-bar" style="--pct: 85%"></div>
+          <span class="skill-pct">85%</span>
+        </div>
+        <span class="skill-badge skill-badge--mid">Advanced</span>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">⚛️</div>
+        <h3 class="skill-name">React.js</h3>
+        <div class="skill-level-wrap">
+          <div class="skill-level-bar" style="--pct: 78%"></div>
+          <span class="skill-pct">78%</span>
+        </div>
+        <span class="skill-badge skill-badge--mid">Advanced</span>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🗄️</div>
+        <h3 class="skill-name">Node.js</h3>
+        <div class="skill-level-wrap">
+          <div class="skill-level-bar" style="--pct: 70%"></div>
+          <span class="skill-pct">70%</span>
+        </div>
+        <span class="skill-badge skill-badge--low">Intermediate</span>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🗃️</div>
+        <h3 class="skill-name">SQL / MySQL</h3>
+        <div class="skill-level-wrap">
+          <div class="skill-level-bar" style="--pct: 65%"></div>
+          <span class="skill-pct">65%</span>
+        </div>
+        <span class="skill-badge skill-badge--low">Intermediate</span>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🐙</div>
+        <h3 class="skill-name">Git &amp; GitHub</h3>
+        <div class="skill-level-wrap">
+          <div class="skill-level-bar" style="--pct: 88%"></div>
+          <span class="skill-pct">88%</span>
+        </div>
+        <span class="skill-badge">Expert</span>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🎭</div>
+        <h3 class="skill-name">Figma / UI Design</h3>
+        <div class="skill-level-wrap">
+          <div class="skill-level-bar" style="--pct: 75%"></div>
+          <span class="skill-pct">75%</span>
+        </div>
+        <span class="skill-badge skill-badge--mid">Advanced</span>
+      </div>
+
+    </div><!-- /.skills-grid -->
+
+    <div class="task-info">
+      <strong>Task 04</strong> — Responsive grid using
+      <code>repeat(auto-fit, minmax(200px, 1fr))</code> — each card has icon, name &amp; level bar
+    </div>
+
+  </section>
+
+</body>
+</html>

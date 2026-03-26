@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 03 – About Me Section (CSS Grid)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <section class="about" id="about">
+
+    <div class="section-header">
+      <span class="section-tag">About Me</span>
+      <h2 class="section-title">Who I Am</h2>
+      <p class="section-sub">Passionate developer crafting digital experiences</p>
+    </div>
+
+    <!-- ★ 2-Column CSS Grid Layout ★ -->
+    <div class="about-grid">
+
+      <!-- Column 1: Text content -->
+      <div class="about-text">
+        <h3 class="about-heading">Building the Web, One Pixel at a Time</h3>
+        <p class="about-para">
+          I'm <strong>Umair Asghar</strong>, a frontend developer with a passion for creating
+          beautiful, accessible, and high-performance web experiences. I love transforming
+          complex problems into elegant, user-friendly solutions.
+        </p>
+        <p class="about-para">
+          When I'm not coding, you'll find me exploring new design trends, contributing to
+          open-source projects, or learning the latest web technologies. I believe that great
+          design and clean code go hand in hand.
+        </p>
+        <a href="#" class="btn-primary">Learn More →</a>
+      </div>
+
+      <!-- Column 2: Info boxes sub-grid -->
+      <div class="info-boxes">
+
+        <div class="info-box">
+          <div class="info-icon">🎓</div>
+          <div class="info-content">
+            <h4>Education</h4>
+            <p>BS Computer Science<br /><span>University of Technology</span></p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-icon">💼</div>
+          <div class="info-content">
+            <h4>Experience</h4>
+            <p>2+ Years<br /><span>Frontend Development</span></p>
+          </div>
+        </div>
+
+        <div class="info-box info-box--wide">
+          <div class="info-icon">🏆</div>
+          <div class="info-content">
+            <h4>Achievements</h4>
+            <p>20+ Projects Completed &nbsp;|&nbsp; Open Source Contributor &nbsp;|&nbsp; Design Enthusiast</p>
+          </div>
+        </div>
+
+      </div><!-- /.info-boxes -->
+
+    </div><!-- /.about-grid -->
+
+    <!-- Task badge -->
+    <div class="task-info">
+      <strong>Task 03</strong> — About section using <code>display:grid</code>,
+      <code>grid-template-columns: repeat(2, 1fr)</code>, <code>gap</code>,
+      and <code>grid-auto-rows</code>
+    </div>
+
+  </section>
+
+</body>
+</html>

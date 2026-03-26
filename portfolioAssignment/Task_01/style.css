@@ -1,0 +1,172 @@
+/* =========================================
+   Task 01 – Header & Navigation (Flexbox)
+   ========================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0d0d15;
+  --surface:   #13131f;
+  --accent:    #7c5cfc;
+  --accent2:   #fc5c7d;
+  --text:      #e8e8f0;
+  --muted:     #8888aa;
+  --border:    rgba(255,255,255,0.07);
+  --radius:    12px;
+  --hdr-h:     72px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--hdr-h);
+  background: rgba(13,13,21,0.85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 5%;
+
+  /* ★ Flexbox properties required by task ★ */
+  display: flex;
+  justify-content: space-between;   /* logo left, nav right */
+  align-items: center;              /* vertically centred   */
+  gap: 1rem;
+}
+
+/* ── LOGO ── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; font-weight: 900; color: #fff;
+}
+.logo-text {
+  font-size: 1.3rem; font-weight: 700; letter-spacing: -0.5px;
+}
+.accent { color: var(--accent2); }
+
+/* ── NAV ── */
+.nav {
+  display: flex;           /* ★ flex row ★ */
+  align-items: center;
+  gap: 0.25rem;            /* ★ gap between links ★ */
+}
+.nav-link {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  transition: color 0.25s, background 0.25s;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text);
+  background: rgba(124,92,252,0.15);
+}
+.nav-link.active { color: var(--accent); }
+
+/* ── HAMBURGER (hidden checkbox trick) ── */
+.nav-toggle { display: none; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+}
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--text);
+  border-radius: 3px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* ── DEMO CONTENT ── */
+.demo-content {
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 0 5%;
+}
+.demo-content h1 {
+  font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem;
+}
+.tag {
+  font-size: 1rem; font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  padding: 4px 14px; border-radius: 20px; vertical-align: middle;
+}
+.demo-content p { color: var(--muted); margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+.checklist { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+.checklist li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.checklist code {
+  background: rgba(124,92,252,0.15);
+  color: var(--accent);
+  padding: 2px 6px; border-radius: 5px;
+  font-size: 0.88rem;
+}
+
+/* ── RESPONSIVE ≤ 600px ── */
+@media (max-width: 600px) {
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1rem 5%;
+    row-gap: 0;
+  }
+
+  .hamburger { display: flex; }
+
+  /* Nav hidden by default on mobile */
+  .nav {
+    flex-direction: column;   /* ★ stacks vertically ★ */
+    align-items: flex-start;
+    gap: 0.25rem;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s;
+  }
+
+  /* Show nav when checkbox checked */
+  .nav-toggle:checked ~ .nav {
+    max-height: 400px;
+    padding: 0.5rem 0 1rem;
+  }
+
+  /* Animate hamburger → X */
+  .nav-toggle:checked ~ .hamburger span:nth-child(1)
+    { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle:checked ~ .hamburger span:nth-child(2)
+    { opacity: 0; }
+  .nav-toggle:checked ~ .hamburger span:nth-child(3)
+    { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-link { width: 100%; }
+}

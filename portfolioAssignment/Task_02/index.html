@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 02 – Hero Section (Flexbox)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Minimal sticky nav for context -->
+  <header class="header">
+    <div class="logo"><span class="logo-icon">U</span><span class="logo-text">Umair<span class="accent">.</span>dev</span></div>
+    <nav class="nav">
+      <a href="#" class="nav-link active">Home</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Projects</a>
+      <a href="#" class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ★ HERO SECTION ★ -->
+  <section class="hero" id="home">
+
+    <!-- Background blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="hero-inner">
+
+      <!-- Left Column: Profile Picture -->
+      <div class="hero-image-col">
+        <div class="avatar-wrapper">
+          <div class="avatar-ring"></div>
+          <div class="avatar">
+            <img src="profile.jpg" alt="Umair Asghar" class="avatar-img" />
+          </div>
+          <div class="status-badge">
+            <span class="status-dot"></span> Available for Work
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Intro + Button -->
+      <div class="hero-text-col">
+        <p class="greeting">👋 Hello, I'm</p>
+        <h1 class="hero-name">Umair Asghar</h1>
+        <h2 class="hero-role">
+          <span class="typed-wrapper">Frontend Developer</span>
+        </h2>
+        <p class="hero-desc">
+          I craft beautiful, performant web experiences using modern HTML, CSS and JavaScript.
+          Passionate about clean code, pixel-perfect design, and seamless user experiences.
+        </p>
+        <div class="hero-cta">
+          <a href="#" class="btn btn-primary">View My Work</a>
+          <a href="#" class="btn btn-outline">Download CV</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years Exp.</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Projects</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Technologies</span></div>
+        </div>
+      </div>
+
+    </div><!-- /.hero-inner -->
+
+    <!-- Task info box -->
+    <div class="task-info">
+      <strong>Task 02</strong> — Hero Section using <code>display:flex</code>,
+      <code>justify-content</code>, <code>align-items</code> &amp; responsive column stacking
+    </div>
+
+  </section>
+
+</body>
+</html>

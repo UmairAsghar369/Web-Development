@@ -1,0 +1,159 @@
+/* =========================================
+   Task 04 – Skills Section (CSS Grid)
+   ========================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0d0d15;
+  --surface:   #13131f;
+  --card:      #1a1a2e;
+  --accent:    #7c5cfc;
+  --accent2:   #fc5c7d;
+  --green:     #00e678;
+  --yellow:    #ffc542;
+  --text:      #e8e8f0;
+  --muted:     #8888aa;
+  --border:    rgba(255,255,255,0.07);
+  --radius:    14px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 4rem 6%;
+}
+
+/* ── SECTION HEADER ── */
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-tag {
+  display: inline-block; font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.6rem;
+}
+.section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 0.5rem; }
+.section-sub { color: var(--muted); font-size: 1rem; }
+
+/* ── SKILLS GRID ── */
+.skills-grid {
+  display: grid;                                   /* ★ CSS Grid ★      */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  /* ★ responsive auto-fit ★ */
+  gap: 1.5rem;                                     /* ★ gap ★           */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── SKILL CARD ── */
+.skill-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+.skill-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(to right, var(--accent), var(--accent2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(124,92,252,0.35);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+.skill-card:hover::after { transform: scaleX(1); }
+
+/* ── Icon ── */
+.skill-icon {
+  font-size: 2.2rem;
+  width: 54px; height: 54px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(124,92,252,0.12);
+  border-radius: 12px;
+}
+
+/* ── Name ── */
+.skill-name {
+  font-size: 1rem; font-weight: 700; line-height: 1.2;
+}
+
+/* ── Level Bar ── */
+.skill-level-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.skill-level-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 99px;
+  background: rgba(255,255,255,0.06);
+  position: relative;
+  overflow: hidden;
+}
+.skill-level-bar::after {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  height: 100%;
+  width: var(--pct);               /* CSS custom property for level % */
+  background: linear-gradient(to right, var(--accent), var(--accent2));
+  border-radius: 99px;
+  animation: barFill 1s ease forwards;
+}
+@keyframes barFill { from { width: 0; } to { width: var(--pct); } }
+
+.skill-pct { font-size: 0.78rem; font-weight: 700; color: var(--accent); white-space: nowrap; }
+
+/* ── Badge ── */
+.skill-badge {
+  font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  padding: 3px 10px; border-radius: 99px;
+  background: rgba(0,230,120,0.15);
+  color: var(--green);
+  border: 1px solid rgba(0,230,120,0.2);
+}
+.skill-badge--mid { background: rgba(255,197,66,0.12); color: var(--yellow); border-color: rgba(255,197,66,0.2); }
+.skill-badge--low { background: rgba(124,92,252,0.12); color: var(--accent); border-color: rgba(124,92,252,0.2); }
+
+/* ── TASK INFO ── */
+.task-info {
+  margin-top: 3rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem 1.4rem;
+  font-size: 0.85rem; color: var(--muted);
+  max-width: 800px; margin-inline: auto;
+  text-align: center;
+}
+.task-info code {
+  background: rgba(124,92,252,0.15); color: var(--accent);
+  padding: 2px 6px; border-radius: 5px; font-size: 0.82rem;
+}
+
+/* ── RESPONSIVE ≤ 600px ── */
+@media (max-width: 600px) {
+  /* auto-fit naturally collapses to single column; explicit override for safety */
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 400px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}

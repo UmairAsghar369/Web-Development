@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 01 – Header & Navigation (Flexbox)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icon">U</span>
+      <span class="logo-text">Umair<span class="accent">.</span>dev</span>
+    </div>
+
+    <!-- Hamburger for mobile (CSS trick using checkbox) -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="hamburger" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="nav">
+      <a href="#home"     class="nav-link active">Home</a>
+      <a href="#about"    class="nav-link">About</a>
+      <a href="#skills"   class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact"  class="nav-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Demo content area -->
+  <main class="demo-content">
+    <h1>Task 01 <span class="tag">Flexbox</span></h1>
+    <p>Header &amp; Navigation built entirely with <strong>CSS Flexbox</strong>.</p>
+    <ul class="checklist">
+      <li>✅ Logo on the <strong>left</strong>, nav on the <strong>right</strong> via <code>justify-content: space-between</code></li>
+      <li>✅ Vertically centered using <code>align-items: center</code></li>
+      <li>✅ Navigation links spaced with <code>gap</code></li>
+      <li>✅ Menu <strong>stacks vertically</strong> on screens ≤ 600 px (hamburger icon)</li>
+    </ul>
+  </main>
+
+</body>
+</html>
