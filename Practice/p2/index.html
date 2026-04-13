@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>My HTML5 Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -18,14 +19,15 @@
 
     <!-- Main content -->
     <main>
-        <!-- Section for text -->
+
+        <!-- Section for About (with semantic meaning) -->
         <section>
             <h2>About</h2>
             <p>This is a simple HTML5 web page.</p>
         </section>
 
-        <!-- Multimedia content -->
-        <section>
+        <!-- Div for Multimedia content -->
+        <div>
             <h2>Media</h2>
             <audio controls>
                 <source src="audio.mp3" type="audio/mpeg">
@@ -34,17 +36,26 @@
             <video width="200" controls>
                 <source src="video.mp4" type="video/mp4">
             </video>
-        </section>
+        </div>
 
-        <!-- Form section -->
+        <!-- Section for Contact Form (with semantic meaning) -->
         <section>
             <h2>Contact Form</h2>
             <form>
-                Name: <input type="text"><br><br>
-                Email: <input type="email"><br><br>
+                <label for="name">Name:</label>
+                <input type="text" id="name"><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email"><br><br>
+
                 <input type="submit" value="Send">
-            </form>
+            </form><br> 
         </section>
+
+        <!-- Button for user interaction -->
+        <div>
+            <button onclick="alert('Button clicked!')">Click Me</button>
+        </div>
     </main>
 
     <!-- Footer section -->
