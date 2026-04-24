@@ -1,0 +1,34 @@
+
+
+/* Styling the main product container */
+.products {
+    display: flex;                  /* puts items in a row */
+    justify-content: space-around;  /* adds space between items */
+    flex-wrap: wrap;                /* allows items to move to next line if needed */
+    padding: 20px;
+}
+
+/* Styling each product box */
+.product {
+    width: 180px;
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+    margin: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+    .products {
+        flex-direction: column;  /* stack items vertically */
+        align-items: center;     /* center them horizontally */
+    }
+}
+
+/* Bonus hover effect */
+.product:hover {
+    background-color: lightgray;         /* Change background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Add shadow */
+    cursor: pointer;                    /* Change cursor to pointer */
+}
