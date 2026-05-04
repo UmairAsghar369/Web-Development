@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 - Gutters &amp; Spacing System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; }
+        .page-header {
+            background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+            color: white; padding: 35px 20px; text-align: center; margin-bottom: 30px;
+        }
+        .page-header h1 { font-size: 2rem; font-weight: 700; }
+        .card-section {
+            background: white; border-radius: 12px; padding: 25px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 25px;
+        }
+        .box {
+            background: #6c5ce7; color: white; padding: 15px; border-radius: 6px;
+            text-align: center; font-weight: 600; font-size: 0.8rem;
+        }
+        .gallery-img {
+            width: 100%; height: 120px; object-fit: cover; border-radius: 8px;
+            background: linear-gradient(135deg, #fd79a8, #6c5ce7);
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <h1>&#128207; Task 4: Gutters &amp; Spacing System</h1>
+        <p>Horizontal (gx), Vertical (gy), Combined (g), and Practical Gallery Comparison</p>
+    </div>
+
+    <div class="container">
+
+        <!-- SECTION A: Horizontal Gutters gx-0 to gx-5 -->
+        <div class="card-section">
+            <h3>Section A &mdash; Horizontal Gutters (<code>gx-*</code>)</h3>
+            <p class="text-muted">Controls horizontal spacing between columns. 3 columns per row.</p>
+
+            <h5 class="mt-3">gx-0 (No horizontal gap)</h5>
+            <div class="row gx-0 mb-3">
+                <div class="col-4"><div class="box">gx-0</div></div>
+                <div class="col-4"><div class="box">gx-0</div></div>
+                <div class="col-4"><div class="box">gx-0</div></div>
+            </div>
+            <h5>gx-1 (0.25rem)</h5>
+            <div class="row gx-1 mb-3">
+                <div class="col-4"><div class="box">gx-1</div></div>
+                <div class="col-4"><div class="box">gx-1</div></div>
+                <div class="col-4"><div class="box">gx-1</div></div>
+            </div>
+            <h5>gx-2 (0.5rem)</h5>
+            <div class="row gx-2 mb-3">
+                <div class="col-4"><div class="box">gx-2</div></div>
+                <div class="col-4"><div class="box">gx-2</div></div>
+                <div class="col-4"><div class="box">gx-2</div></div>
+            </div>
+            <h5>gx-3 (1rem) &mdash; Bootstrap Default</h5>
+            <div class="row gx-3 mb-3">
+                <div class="col-4"><div class="box">gx-3</div></div>
+                <div class="col-4"><div class="box">gx-3</div></div>
+                <div class="col-4"><div class="box">gx-3</div></div>
+            </div>
+            <h5>gx-4 (1.5rem)</h5>
+            <div class="row gx-4 mb-3">
+                <div class="col-4"><div class="box">gx-4</div></div>
+                <div class="col-4"><div class="box">gx-4</div></div>
+                <div class="col-4"><div class="box">gx-4</div></div>
+            </div>
+            <h5>gx-5 (3rem)</h5>
+            <div class="row gx-5 mb-3">
+                <div class="col-4"><div class="box">gx-5</div></div>
+                <div class="col-4"><div class="box">gx-5</div></div>
+                <div class="col-4"><div class="box">gx-5</div></div>
+            </div>
+        </div>
+
+        <!-- SECTION B: Vertical Gutters gy-0 to gy-5 -->
+        <div class="card-section">
+            <h3>Section B &mdash; Vertical Gutters (<code>gy-*</code>)</h3>
+            <p class="text-muted">Controls vertical spacing. Using col-6 to force wrapping (2 per row, 4 items = 2 rows).</p>
+
+            <h5 class="mt-3">gy-0 (No vertical gap)</h5>
+            <div class="row gy-0 mb-4">
+                <div class="col-6"><div class="box" style="background:#e53935;">gy-0</div></div>
+                <div class="col-6"><div class="box" style="background:#e53935;">gy-0</div></div>
+                <div class="col-6"><div class="box" style="background:#e53935;">gy-0</div></div>
+                <div class="col-6"><div class="box" style="background:#e53935;">gy-0</div></div>
+            </div>
+            <h5>gy-1 (0.25rem)</h5>
+            <div class="row gy-1 mb-4">
+                <div class="col-6"><div class="box" style="background:#8e24aa;">gy-1</div></div>
+                <div class="col-6"><div class="box" style="background:#8e24aa;">gy-1</div></div>
+                <div class="col-6"><div class="box" style="background:#8e24aa;">gy-1</div></div>
+                <div class="col-6"><div class="box" style="background:#8e24aa;">gy-1</div></div>
+            </div>
+            <h5>gy-2 (0.5rem)</h5>
+            <div class="row gy-2 mb-4">
+                <div class="col-6"><div class="box" style="background:#1e88e5;">gy-2</div></div>
+                <div class="col-6"><div class="box" style="background:#1e88e5;">gy-2</div></div>
+                <div class="col-6"><div class="box" style="background:#1e88e5;">gy-2</div></div>
+                <div class="col-6"><div class="box" style="background:#1e88e5;">gy-2</div></div>
+            </div>
+            <h5>gy-3 (1rem)</h5>
+            <div class="row gy-3 mb-4">
+                <div class="col-6"><div class="box" style="background:#43a047;">gy-3</div></div>
+                <div class="col-6"><div class="box" style="background:#43a047;">gy-3</div></div>
+                <div class="col-6"><div class="box" style="background:#43a047;">gy-3</div></div>
+                <div class="col-6"><div class="box" style="background:#43a047;">gy-3</div></div>
+            </div>
+            <h5>gy-4 (1.5rem)</h5>
+            <div class="row gy-4 mb-4">
+                <div class="col-6"><div class="box" style="background:#fb8c00;">gy-4</div></div>
+                <div class="col-6"><div class="box" style="background:#fb8c00;">gy-4</div></div>
+                <div class="col-6"><div class="box" style="background:#fb8c00;">gy-4</div></div>
+                <div class="col-6"><div class="box" style="background:#fb8c00;">gy-4</div></div>
+            </div>
+            <h5>gy-5 (3rem)</h5>
+            <div class="row gy-5 mb-4">
+                <div class="col-6"><div class="box" style="background:#00897b;">gy-5</div></div>
+                <div class="col-6"><div class="box" style="background:#00897b;">gy-5</div></div>
+                <div class="col-6"><div class="box" style="background:#00897b;">gy-5</div></div>
+                <div class="col-6"><div class="box" style="background:#00897b;">gy-5</div></div>
+            </div>
+        </div>
+
+        <!-- SECTION C: Combined Gutters g-0 to g-5 -->
+        <div class="card-section">
+            <h3>Section C &mdash; Combined Gutters (<code>g-*</code>)</h3>
+            <p class="text-muted">Controls both horizontal AND vertical spacing. 2x2 grid using col-6.</p>
+
+            <h5 class="mt-3">g-0</h5>
+            <div class="row g-0 mb-4">
+                <div class="col-6"><div class="box">g-0</div></div>
+                <div class="col-6"><div class="box">g-0</div></div>
+                <div class="col-6"><div class="box">g-0</div></div>
+                <div class="col-6"><div class="box">g-0</div></div>
+            </div>
+            <h5>g-1</h5>
+            <div class="row g-1 mb-4">
+                <div class="col-6"><div class="box">g-1</div></div>
+                <div class="col-6"><div class="box">g-1</div></div>
+                <div class="col-6"><div class="box">g-1</div></div>
+                <div class="col-6"><div class="box">g-1</div></div>
+            </div>
+            <h5>g-2</h5>
+            <div class="row g-2 mb-4">
+                <div class="col-6"><div class="box">g-2</div></div>
+                <div class="col-6"><div class="box">g-2</div></div>
+                <div class="col-6"><div class="box">g-2</div></div>
+                <div class="col-6"><div class="box">g-2</div></div>
+            </div>
+            <h5>g-3 (default)</h5>
+            <div class="row g-3 mb-4">
+                <div class="col-6"><div class="box">g-3</div></div>
+                <div class="col-6"><div class="box">g-3</div></div>
+                <div class="col-6"><div class="box">g-3</div></div>
+                <div class="col-6"><div class="box">g-3</div></div>
+            </div>
+            <h5>g-4</h5>
+            <div class="row g-4 mb-4">
+                <div class="col-6"><div class="box">g-4</div></div>
+                <div class="col-6"><div class="box">g-4</div></div>
+                <div class="col-6"><div class="box">g-4</div></div>
+                <div class="col-6"><div class="box">g-4</div></div>
+            </div>
+            <h5>g-5</h5>
+            <div class="row g-5 mb-4">
+                <div class="col-6"><div class="box">g-5</div></div>
+                <div class="col-6"><div class="box">g-5</div></div>
+                <div class="col-6"><div class="box">g-5</div></div>
+                <div class="col-6"><div class="box">g-5</div></div>
+            </div>
+        </div>
+
+        <!-- SECTION D: Practical Gallery Comparison -->
+        <div class="card-section">
+            <h3>Section D &mdash; Practical Gallery Comparison</h3>
+
+            <h5 class="text-danger mt-3">Gallery 1: Tight Spacing (<code>g-1</code>)</h5>
+            <p class="text-muted">Best for mobile &mdash; maximizes image space on small screens.</p>
+            <div class="row g-1 mb-4">
+                <div class="col-6 col-md-3"><div class="gallery-img">Photo 1</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img">Photo 2</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img">Photo 3</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img">Photo 4</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img">Photo 5</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img">Photo 6</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img">Photo 7</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img">Photo 8</div></div>
+            </div>
+
+            <h5 class="text-success">Gallery 2: Comfortable Spacing (<code>g-4</code>)</h5>
+            <p class="text-muted">Best for desktop &mdash; gives each image breathing room.</p>
+            <div class="row g-4 mb-4">
+                <div class="col-6 col-md-3"><div class="gallery-img" style="background:linear-gradient(135deg,#00b894,#00cec9);">Photo 1</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img" style="background:linear-gradient(135deg,#00b894,#00cec9);">Photo 2</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img" style="background:linear-gradient(135deg,#00b894,#00cec9);">Photo 3</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img" style="background:linear-gradient(135deg,#00b894,#00cec9);">Photo 4</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img" style="background:linear-gradient(135deg,#00b894,#00cec9);">Photo 5</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img" style="background:linear-gradient(135deg,#00b894,#00cec9);">Photo 6</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img" style="background:linear-gradient(135deg,#00b894,#00cec9);">Photo 7</div></div>
+                <div class="col-6 col-md-3"><div class="gallery-img" style="background:linear-gradient(135deg,#00b894,#00cec9);">Photo 8</div></div>
+            </div>
+
+            <div class="alert alert-info">
+                <b>Which is better?</b><br>
+                <b>g-1 (tight)</b> is better for <b>mobile</b> because it maximizes image size on small screens.<br>
+                <b>g-4 (comfortable)</b> is better for <b>desktop</b> because there's enough space and breathing room makes the gallery look cleaner and more professional.
+            </div>
+        </div>
+
+        <!-- Answer -->
+        <div class="card border-0 shadow-sm mb-5">
+            <div class="card-header bg-dark text-white"><h4 class="mb-0">&#128221; Answer</h4></div>
+            <div class="card-body">
+                <h5 class="text-primary">Q: Why does Bootstrap use rem instead of px for gutters?</h5>
+                <p class="ms-3"><code>rem</code> stands for "root em" and is relative to the root font size (usually 16px). Bootstrap uses <code>rem</code> instead of <code>px</code> because:</p>
+                <ul class="ms-3">
+                    <li><b>Accessibility:</b> If a user increases their browser's default font size (for poor vision), rem-based spacing scales proportionally, keeping the layout comfortable. Pixels don't scale.</li>
+                    <li><b>Consistency:</b> All spacing stays proportional to text size, so the design feels harmonious at any zoom level.</li>
+                    <li><b>Responsiveness:</b> rem adapts better across different devices and user preferences than fixed pixel values.</li>
+                </ul>
+                <p class="ms-3"><b>Example:</b> <code>g-3 = 1rem = 16px</code> by default, but if a user sets their browser font to 20px, then <code>1rem = 20px</code>, and spacing grows accordingly.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

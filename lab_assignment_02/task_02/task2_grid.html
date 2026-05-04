@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 - Responsive Grid System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; }
+        .page-header {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white; padding: 35px 20px; text-align: center; margin-bottom: 30px;
+        }
+        .page-header h1 { font-size: 2rem; font-weight: 700; }
+
+        /* Live Breakpoint Indicator */
+        .bp-indicator {
+            position: sticky; top: 0; z-index: 999;
+            background: #1a1a2e; color: #fff; padding: 12px 20px;
+            text-align: center; font-size: 1.1rem; font-weight: 600;
+            border-bottom: 3px solid #e94560;
+        }
+        .bp-indicator span { color: #e94560; font-size: 1.3rem; }
+
+        /* Grid columns - colors applied directly */
+        .grid-box {
+            padding: 25px 10px; text-align: center; font-weight: 700;
+            font-size: 1.5rem; color: #fff; min-height: 100px;
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; border: 3px solid rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+        }
+        .grid-box small { font-size: 0.7rem; font-weight: 400; opacity: 0.9; margin-top: 5px; }
+        .grid-box:hover { transform: scale(1.03); box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+
+        .bg-col-1 { background: #e53935; }
+        .bg-col-2 { background: #8e24aa; }
+        .bg-col-3 { background: #1e88e5; }
+        .bg-col-4 { background: #43a047; }
+        .bg-col-5 { background: #fb8c00; }
+        .bg-col-6 { background: #00897b; }
+
+        .info-card {
+            background: white; border-radius: 12px; padding: 25px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 25px;
+        }
+
+        /* Highlight active breakpoint row in table */
+        .bp-active { background: #fff3cd !important; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+    <!-- LIVE Breakpoint Indicator - updates as you resize -->
+    <div class="bp-indicator">
+        Current Breakpoint: <span id="currentBP">Loading...</span>
+        &nbsp;|&nbsp; Window Width: <span id="currentWidth">0</span>px
+        &nbsp;|&nbsp; Columns per row: <span id="colCount">0</span>
+    </div>
+
+    <div class="page-header">
+        <h1>&#128200; Task 2: Responsive Grid System</h1>
+        <p>Using all six breakpoints: xs, sm, md, lg, xl, xxl &mdash; <b>Resize your browser now!</b></p>
+    </div>
+
+    <div class="container-fluid px-4">
+
+        <!-- Main Grid Demo -->
+        <div class="info-card">
+            <h4>&#127912; Six Columns with Full Breakpoint Chain</h4>
+            <p>Each column uses: <code>col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1</code></p>
+            <p class="text-muted mb-3">&#9664;&#9654; <b></p>
+
+            <div class="row g-2" id="gridDemo">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                    <div class="grid-box bg-col-1">1<small>RED</small></div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                    <div class="grid-box bg-col-2">2<small>PURPLE</small></div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                    <div class="grid-box bg-col-3">3<small>BLUE</small></div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                    <div class="grid-box bg-col-4">4<small>GREEN</small></div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                    <div class="grid-box bg-col-5">5<small>ORANGE</small></div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-1">
+                    <div class="grid-box bg-col-6">6<small>TEAL</small></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Guide: What to Expect -->
+        <div class="info-card">
+            <h4>&#128214; What You Should See at Each Breakpoint</h4>
+            <table class="table table-bordered" id="bpTable">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Breakpoint</th>
+                        <th>Screen Width</th>
+                        <th>Active Class</th>
+                        <th>Columns per Row</th>
+                        <th>Visual Layout</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="row-xs">
+                        <td><b>xs</b></td>
+                        <td>&lt; 576px</td>
+                        <td><code>col-12</code></td>
+                        <td><b>1</b></td>
+                        <td>&#128308; All 6 stacked vertically (one per line)</td>
+                    </tr>
+                    <tr id="row-sm">
+                        <td><b>sm</b></td>
+                        <td>&ge; 576px</td>
+                        <td><code>col-sm-6</code></td>
+                        <td><b>2</b></td>
+                        <td>&#128308;&#128995; paired, 3 rows of 2</td>
+                    </tr>
+                    <tr id="row-md">
+                        <td><b>md</b></td>
+                        <td>&ge; 768px</td>
+                        <td><code>col-md-4</code></td>
+                        <td><b>3</b></td>
+                        <td>&#128308;&#128995;&#128309; three across, 2 rows</td>
+                    </tr>
+                    <tr id="row-lg">
+                        <td><b>lg</b></td>
+                        <td>&ge; 992px</td>
+                        <td><code>col-lg-3</code></td>
+                        <td><b>4</b></td>
+                        <td>&#128308;&#128995;&#128309;&#128994; four across, then 2 below</td>
+                    </tr>
+                    <tr id="row-xl">
+                        <td><b>xl</b></td>
+                        <td>&ge; 1200px</td>
+                        <td><code>col-xl-2</code></td>
+                        <td><b>6</b></td>
+                        <td>&#128308;&#128995;&#128309;&#128994;&#128992;&#11044; all 6 in one row</td>
+                    </tr>
+                    <tr id="row-xxl">
+                        <td><b>xxl</b></td>
+                        <td>&ge; 1400px</td>
+                        <td><code>col-xxl-1</code></td>
+                        <td><b>6</b> (each 1/12 wide)</td>
+                        <td>All 6 in one row but very narrow (1/12 each)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Answers -->
+        <div class="card border-0 shadow-sm mb-5">
+            <div class="card-header bg-dark text-white"><h4 class="mb-0">&#128221; Answers</h4></div>
+            <div class="card-body">
+                <h5 class="text-primary">Q1: How many columns appear side-by-side at each breakpoint?</h5>
+                <ul class="ms-3">
+                    <li><b>xs (&lt;576px):</b> 1 column per row (each is col-12 = full width, stacked)</li>
+                    <li><b>sm (&ge;576px):</b> 2 columns per row (each is col-sm-6 = half)</li>
+                    <li><b>md (&ge;768px):</b> 3 columns per row (each is col-md-4 = one-third)</li>
+                    <li><b>lg (&ge;992px):</b> 4 columns per row (each is col-lg-3 = one-quarter)</li>
+                    <li><b>xl (&ge;1200px):</b> 6 columns per row (each is col-xl-2 = one-sixth)</li>
+                    <li><b>xxl (&ge;1400px):</b> 6 columns but each is col-xxl-1 = only 1/12 width</li>
+                </ul>
+                <hr>
+                <h5 class="text-primary">Q2: What happens when total columns in a row exceed 12?</h5>
+                <p class="ms-3">When column units add up to more than 12, the extra columns <b>wrap to the next line</b>. For example, 3 columns of <code>col-6</code> = 6+6+6 = 18 &gt; 12, so the 3rd column drops below. This is called <b>column wrapping</b> and is how Bootstrap creates multi-row layouts from a single <code>.row</code>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Live breakpoint indicator - updates in real time as you resize
+        function updateBreakpoint() {
+            var w = window.innerWidth;
+            var bp, cols;
+            if (w >= 1400)      { bp = 'XXL (≥1400px)'; cols = '6 (each 1/12)'; }
+            else if (w >= 1200) { bp = 'XL (≥1200px)';  cols = '6'; }
+            else if (w >= 992)  { bp = 'LG (≥992px)';   cols = '4'; }
+            else if (w >= 768)  { bp = 'MD (≥768px)';   cols = '3'; }
+            else if (w >= 576)  { bp = 'SM (≥576px)';   cols = '2'; }
+            else                { bp = 'XS (<576px)';   cols = '1'; }
+
+            document.getElementById('currentBP').textContent = bp;
+            document.getElementById('currentWidth').textContent = w;
+            document.getElementById('colCount').textContent = cols;
+
+            // Highlight active row in table
+            var rows = ['xs','sm','md','lg','xl','xxl'];
+            var active = w >= 1400 ? 'xxl' : w >= 1200 ? 'xl' : w >= 992 ? 'lg' : w >= 768 ? 'md' : w >= 576 ? 'sm' : 'xs';
+            rows.forEach(function(r) {
+                var el = document.getElementById('row-' + r);
+                if (r === active) { el.classList.add('bp-active'); }
+                else { el.classList.remove('bp-active'); }
+            });
+        }
+        window.addEventListener('resize', updateBreakpoint);
+        updateBreakpoint(); // run on load
+    </script>
+</body>
+</html>
