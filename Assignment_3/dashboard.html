@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your personal portfolio dashboard.">
+    <title>Dashboard - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="bg-pattern"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <span class="brand">&#9889; MyPortfolio</span>
+        <div class="nav-right">
+            <span class="welcome-msg" id="welcomeMsg">Hello, User</span>
+            <a href="answers.html" class="btn btn-outline btn-sm">Theory Answers</a>
+            <button class="btn btn-danger btn-sm" id="logoutBtn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <!-- Welcome Banner -->
+        <div class="section-card welcome-banner">
+            <h2 id="bannerName">Welcome!</h2>
+            <p>Manage your skills and projects from this dashboard.</p>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section-card">
+            <h3>&#128295; My Skills</h3>
+            <p class="section-desc">Add the technologies and skills you know.</p>
+            <div class="add-form">
+                <input type="text" id="skillInput" placeholder="e.g. JavaScript, Python...">
+                <button class="btn btn-primary btn-sm" id="addSkillBtn">+ Add Skill</button>
+            </div>
+            <ul class="item-list" id="skillList"></ul>
+            <p class="empty-msg" id="skillEmpty">No skills added yet.</p>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section-card">
+            <h3>&#128187; My Projects</h3>
+            <p class="section-desc">Showcase your projects here.</p>
+            <div class="add-form">
+                <input type="text" id="projectNameInput" placeholder="Project name">
+                <input type="text" id="projectDescInput" placeholder="Short description">
+                <button class="btn btn-primary btn-sm" id="addProjectBtn">+ Add Project</button>
+            </div>
+            <ul class="item-list" id="projectList"></ul>
+            <p class="empty-msg" id="projectEmpty">No projects added yet.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
